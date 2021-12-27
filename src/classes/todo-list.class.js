@@ -2,7 +2,7 @@
 
 export class TodoList {
 
-    costructor() {
+    constructor() {
 
         this.todos = [];
 
