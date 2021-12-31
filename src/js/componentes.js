@@ -38,9 +38,24 @@ txtInput.addEventListener('keyup',
            todoList.nuevoTodo( nuevoTodo );
 
            crearTodoHtml( nuevoTodo );
-
+           txtInput.value = '';
        }
 
     });
+
+divTodoList.addEventListener('click', ( event ) => {
+    const nombreElemento = event.target.localName;
+    const todoElemento   = event.target.parentElement.parentElement;
+    const todoId         = todoElemento.getAttribute('data-id');
+
+    if( nombreElemento.includes('input') ) {
+        todoList.marcarCompletado( todoId );
+        todoElemento.classList.toggle('completed');
+
+    }
+
+
+
+});
 
 
